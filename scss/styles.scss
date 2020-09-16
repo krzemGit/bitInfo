@@ -1,0 +1,269 @@
+// all scss kept in one file because the code is not extensive - the app is not big and the bootstrap scheme helped much with css
+
+
+// mixins, keyframes and variables
+
+@mixin tablet {
+    @media (min-width: 768px) {
+        @content
+    }
+};
+
+@mixin desktop {
+    @media (min-width: 996px) {
+        @content
+    }
+};
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg)
+    }
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+@keyframes fadein {
+    0% {
+        opacity: 0
+    }
+    100% {
+        opacity: 1
+    }
+}
+    
+$light-gray: #CED4DA;
+
+// general styling
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 15px;
+}
+
+body {
+    background-color: whitesmoke;
+}
+
+hr {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+div.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+
+    ul {
+        padding-right: 0;
+    }
+}
+
+.main-wrapper {
+    position: relative;
+}
+
+// Navbar
+.navbar {
+    .nav-item {
+        margin-left: 20px;
+
+        @include tablet {
+            margin-left: 40px;
+            font-size: 1.2rem
+        }
+    }
+
+    i {
+        animation: rotate 5s linear infinite
+    }
+}
+
+// Header
+
+.header {
+    &__subtitle {
+        margin-bottom: 20px;
+
+        @include tablet {
+            max-width: 50%
+        }
+
+    }
+}
+
+// Panel (buttons and input)
+
+.panel {
+    padding: 0;
+
+    &__buttons {
+        border: 1px solid $light-gray;
+        border-radius: 5px;
+
+        height: 100px;
+
+        display: flex;
+        justify-content: center;
+
+        &--wrapper {
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        @include tablet {
+            position: absolute;
+            height: 162px;
+            right: 0;
+            top: 0;
+            width: 48.5%;
+
+            align-items: center;
+
+            background-color: #fff;
+        }
+
+        @include desktop {
+            height: 140px;
+        }
+    }
+
+    &__input {
+        padding: 0;
+        margin: 10px auto 5px;
+    }
+
+    &__label {
+        display: none;
+    }
+}
+
+// display for rates and graph
+
+.display {
+
+    @include desktop {
+        display: flex;
+    }
+
+    &__rates-table {
+        @include tablet {
+            text-align: center;
+        }
+    }
+
+    &__hr {
+        margin: 20px auto 20px;
+
+        @include desktop {
+            display: none
+        }
+    }
+
+    &__graph {
+        &-container {
+            margin: 0;
+            padding: 0 0 20px 0;
+
+            @include desktop {
+                padding: 0 0 0 1rem;
+            }
+        }
+
+        &-wrapper {
+            margin: 0 auto;
+            padding: 10px ;
+            background-color: #fff;
+
+            border: 1px solid $light-gray;
+            border-radius: 5px
+        }
+    }
+}
+
+// news section
+
+.news {
+    &__title {
+        margin-top: 40px
+    }
+
+    &__spinner {
+        display: inline-block;
+        animation: rotate 1.5s linear infinite;
+    }
+
+    &__loader {
+        margin-top: 100px;
+        width: 100%;
+
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+
+    
+        &-info {
+            flex-basis: 100%;
+            text-align: center;
+            font-size: 2rem;}
+        }
+    }
+
+.card {
+    width: 100%;
+    margin-top: 20px;
+    position: relative;
+    animation: fadein 1s;
+
+    @include tablet {
+        width: 48%;
+        margin-top: 30px;
+    }
+
+    @include desktop {
+        width: 30%;
+        margin-top: 40px;
+    }
+
+    &-img-top {
+        background-image: url("https://pixabay.com/get/57e8d4404f52af14f1dc8460da29317e153ed8e4505471_640.jpg");
+        background-position: center;
+        min-height: 170px;
+        color: whitesmoke;
+    }
+
+    &-text {
+        margin-bottom: 40px
+    }
+
+    &__btn {
+        position: absolute;
+        right: 15px;
+        bottom: 15px;
+        left: 15px;
+    }
+}
+
+// about section
+
+.about {
+    &__title--main {
+        font-size: 2rem;
+
+        @include tablet {
+            font-size: 2.5rem
+        }
+    }
+}
+
+span.tech {
+    font-weight: bold;
+    color: #2FA4E7;
+}

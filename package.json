@@ -1,0 +1,22 @@
+{
+  "name": "bitinfo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "author": "Krzem",
+  "license": "ISC",
+  "dependencies": {
+    "chart.js": "^2.9.3",
+    "isomorphic-unfetch": "^3.0.0",
+    "next": "^9.5.3",
+    "react": "^16.13.1",
+    "react-chartjs-2": "^2.10.0",
+    "react-dom": "^16.13.1",
+    "sass": "^1.26.10"
+  }
+}
