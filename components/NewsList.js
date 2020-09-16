@@ -72,7 +72,7 @@ class NewsList extends Component {
                             </div>)
 
                     })) : (<div className="news__loader">
-                        <p className="news__spinner"><i class="fas fa-spinner fa-4x"></i></p>
+                        <p className="news__spinner"><i className="fas fa-spinner fa-4x"></i></p>
                         <p className="news__loader-info">loading news...</p>
                     </div>)
                 }
