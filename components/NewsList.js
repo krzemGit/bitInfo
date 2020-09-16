@@ -22,7 +22,7 @@ class NewsList extends Component {
     }
 
     fetchNewData = () => {
-        Fetch(`https://cryptocontrol.io/api/v1/public/news?key=${process.env.news_key}`)
+        Fetch(`https://cryptocontrol.io/api/v1/public/news?key=${process.env.NEWS_KEY}`)
             .then(res => res.json())
             .then(data => {
                 this.setState({
